@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["InstructorID"]?></td>
-    <td><a href="page3.php?id=<?=$row["InstructorID"]?>"><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
+    <td><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
   </tr>
 <?php
   }
