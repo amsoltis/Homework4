@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["InstructorID"]?></td>
-    <td><a href="instructor-delete.php?id=<?=$row["instructor_id"]?>"><?=$row["instructor_name"]?></a></td>
+    <td><a href="instructor-delete.php?id=<?=$row["InstructorID"]?>"><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
   </tr>
 <?php
   }
