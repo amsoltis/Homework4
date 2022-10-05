@@ -39,6 +39,12 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["InstructorID"]?></td>
     <td><a href="instructor-delete.php?id=<?=$row["InstructorID"]?>"><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
+    <td>
+      <form method="post" action="instructor-edit.php">
+        <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
+        <input type="submit" value="Edit Record" />
+      </form>
+    </td>
   </tr>
 <?php
   }
