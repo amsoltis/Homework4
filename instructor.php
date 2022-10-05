@@ -11,7 +11,8 @@
     <tr>
       <th>InstructorID</th>
       <th>Name</th>
-      <th></th>
+      <th>Edit Record</th>
+      <th>Delete Record</th>
     </tr>
   </thead>
   <tbody>
@@ -42,13 +43,13 @@ if ($result->num_rows > 0) {
     <td>
       <form method="post" action="instructor-edit.php">
         <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
-        <input type="submit" value="Edit Record" />
+        <input type="submit" value="Edit" />
       </form>
     </td>
     <td>
       <form method="post" action="instructor-delete.php">
         <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
-        <input type="submit" value="Delete Record" />
+        <input type="submit" value="Delete" />
       </form>
     </td>
   </tr>
