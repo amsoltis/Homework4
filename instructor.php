@@ -4,7 +4,7 @@
 
 <body>
     <h1>Instructors</h1>
-  <a href="instructor-add.php" class="btn btn-primary">Add New</a>
+  <a href="instructor-add.php" class="btn btn-primary">Add New Instructor</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   <table class="table table-striped">
   <thead>
@@ -38,11 +38,17 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["InstructorID"]?></td>
-    <td><a href="instructor-delete.php?id=<?=$row["InstructorID"]?>"><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
+    <td><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
     <td>
       <form method="post" action="instructor-edit.php">
         <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
         <input type="submit" value="Edit Record" />
+      </form>
+    </td>
+    <td>
+      <form method="post" action="instructor-delete.php">
+        <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
+        <input type="submit" value="Delete Record" />
       </form>
     </td>
   </tr>
