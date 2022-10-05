@@ -11,8 +11,8 @@
     <tr>
       <th>InstructorID</th>
       <th>Name</th>
-      <th>Edit Record</th>
-      <th>Delete Record</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
