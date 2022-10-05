@@ -20,16 +20,7 @@
           <a class="nav-link" href="./index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./page1.php">Instructors</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./page2.php">Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./page4.php">Bird</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./page5.php">Car</a>
+          <a class="nav-link" href="./instructor.php">Instructors</a>
         </li>
       </ul>
     </div>
