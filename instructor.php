@@ -52,5 +52,5 @@ $conn->close();
   </body>
 
 <footer>
-Click the 'Name' to see only that Instructors Information
+<?php require_once("footer.php"); ?>
 </footer>
