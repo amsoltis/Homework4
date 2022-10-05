@@ -43,13 +43,13 @@ if ($result->num_rows > 0) {
     <td>
       <form method="post" action="instructor-edit.php">
         <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
-        <input type="submit" value="Edit" class="btn"/>
+        <input type="submit" value="Edit" />
       </form>
     </td>
     <td>
       <form method="post" action="instructor-delete.php">
         <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
-        <input type="submit" value="Delete" class="btn" />
+        <input type="submit" value="Delete" />
       </form>
     </td>
   </tr>
