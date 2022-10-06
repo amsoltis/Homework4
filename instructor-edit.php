@@ -31,7 +31,6 @@ if ($result->num_rows > 0) {
   <div class="mb-3">
     <label for="instructorName" class="form-label">First Name</label>
     <input type="text" class="form-control" id="instructorName" aria-describedby="nameHelp" name="iFirstName" value="<?=$row["FirstName"]." "?>">
-    <div id="nameHelp" class="form-text">Enter the instructor's name.</div>
   </div>
     <div class="mb-3">
     <label for="instructorName" class="form-label">Last Name</label>
@@ -51,6 +50,5 @@ $conn->close();
   </body>
 
 <footer>
-Only can edit first name, because table has a FirstName and LastName.
 <?php require_once("footer.php"); ?>
 </footer>
