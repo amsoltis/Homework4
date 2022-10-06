@@ -50,10 +50,9 @@ if ($result->num_rows > 0) {
       </form>
     </td>
     <td>
-      <form method="post" action="bird-delete.php">
-        <input type="hidden" name="id" value="<?=$row["BirdID"]?>" />
-        <input type="submit" value="Delete" />
-      </form>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Delete Record
+        </button>
     </td>
   </tr>
 <?php
