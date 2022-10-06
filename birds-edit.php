@@ -17,7 +17,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SSELECT Birdid, Name, Color, Age from Birds WHERE BirdID=?";
+$sql = "SELECT Birdid, Name, Color, Age from Birds WHERE BirdID=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $_POST['id']);
 $stmt->execute();
