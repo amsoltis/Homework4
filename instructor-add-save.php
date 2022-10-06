@@ -3,7 +3,7 @@
 </head>
 
 <body>
-
+    
 <?php
 $servername = "localhost";
 $username = "asoltiso_asoltis";
@@ -19,17 +19,18 @@ if ($conn->connect_error) {
 $iFirstName = $_POST['iFirstName'];
 $iLastName = $_POST['iLastName'];
 
-$sql = "INSERT INTO Instructor ('FirstName', 'LastName') VALUES ('?', '?')";
+$sql = "insert into Instructor (FirstName, LastName) value (?, ?)";
 //echo $sql;
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $iFirstName, $iLastName);
-    $stmt->execute();
+    $stmt->execute();        
 ?>
+    
     <h1>Add Instructor</h1>
 <div class="alert alert-success" role="alert">
-  Instructor added.
+  New instructor added.
 </div>
-    <a href="instructor.php" class="btn btn-primary">Go back</a>
+    <a href="instructors.php" class="btn btn-primary">Go back</a>
   </body>
 
 <footer>
