@@ -31,7 +31,7 @@ $sql = "update Courses set InstructorID=?, CourseNumber=?, Section=? where Cours
 <div class="alert alert-success" role="alert">
   Instructor edited.
 </div>
-    <a href="instructor.php" class="btn btn-primary">Go back</a>
+    <a href="courses.php" class="btn btn-primary">Go back</a>
   </body>
 
 <footer>

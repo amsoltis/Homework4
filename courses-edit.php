@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 ?>
-<form method="post" action="instructor-edit-save.php">
+<form method="post" action="courses-edit-save.php">
 <div class="mb-3">
     <label for="courseNumber" class="form-label">Course Number</label>
     <input type="text" class="form-control" id="courseNumber" aria-describedby="nameHelp" name="cNumber" value="<?=$row['CourseNumber']?>">
