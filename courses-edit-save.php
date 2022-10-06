@@ -27,9 +27,9 @@ $sql = "update Courses set InstructorID=?, CourseNumber=?, Section=? where Cours
     $stmt->execute();
 ?>
     
-    <h1>Edit Instructor</h1>
+    <h1>Edit Courses</h1>
 <div class="alert alert-success" role="alert">
-  Instructor edited.
+  Courses edited.
 </div>
     <a href="courses.php" class="btn btn-primary">Go back</a>
   </body>

@@ -3,7 +3,7 @@
 </head>
 
 <body>
-    <h1>Edit Instructor</h1>
+    <h1>Edit Course</h1>
 <?php
 $servername = "localhost";
 $username = "asoltiso_asoltis";

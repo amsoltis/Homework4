@@ -26,9 +26,9 @@ $sql = "update Instructor set FirstName=?, LastName=? where InstructorID=?";
     $stmt->execute();
 ?>
     
-    <h1>Edit Course</h1>
+    <h1>Edit Instructor</h1>
 <div class="alert alert-success" role="alert">
-  Course edited.
+  Instructor edited.
 </div>
     <a href="instructor.php" class="btn btn-primary">Go back</a>
   </body>
