@@ -18,10 +18,10 @@ if ($conn->connect_error) {
 }
 $iName = $_POST['iName'];
 
-$sql = "update Instructor set FirstName=? where InstructorID=?";
+$sql = "update Instructor set FirstName=?, LastName=? where InstructorID=?";
 //echo $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $iName, $_POST['id']);
+    $stmt->bind_param("ssi", $iFirstName, $iLastName, $_POST['id']);
     $stmt->execute();
 ?>
     
