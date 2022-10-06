@@ -31,7 +31,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT CourseID, InstructorID, CourseNumber, Section from Courses Order by CourseID";
+$sql = "SELECT * from Cars Order by CarID";
 //echo $sql;
 $result = $conn->query($sql);
 
