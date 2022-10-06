@@ -4,6 +4,7 @@
 
 
 <body>
+<h1>Add Bird</h1>
 <form method="post" action="birds-add-save.php">
 <div class="mb-3">
     <label for="Name" class="form-label">Bird Name</label>

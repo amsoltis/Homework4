@@ -3,6 +3,7 @@
 </head>
 
 <body>
+<h1>Add Instructor</h1>
 <form method="post" action="instructor-add-save.php">
 <div class="mb-3">
     <label for="instructorFirstName" class="form-label">First Name</label>

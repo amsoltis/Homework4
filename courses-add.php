@@ -3,6 +3,7 @@
 </head>
 
 <body>
+<h1>Add Course</h1>
 <form method="post" action="courses-add-save.php">
 <div class="mb-3">
     <label for="courseNumber" class="form-label">Course Number</label>

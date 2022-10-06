@@ -4,7 +4,7 @@
 
 
 <body>
-<h1>Add Cars</h1>
+<h1>Add Car</h1>
 <form method="post" action="cars-add-save.php">
 <div class="mb-3">
     <label for="Color" class="form-label">Car Color</label>

@@ -3,7 +3,7 @@
 </head>
 
 <body>
-    <h1>Edit Birds</h1>
+    <h1>Edit Bird</h1>
 <?php
 $servername = "localhost";
 $username = "asoltiso_asoltis";
