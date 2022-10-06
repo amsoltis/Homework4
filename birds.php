@@ -67,5 +67,5 @@ $conn->close();
     </table>
       </body>
 <footer>
-<br><?php require_once("footer.php"); ?></br>
+<?php require_once("footer.php"); ?>
 </footer>
