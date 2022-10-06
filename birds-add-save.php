@@ -20,16 +20,16 @@ $bName = $_POST['bName'];
 $bColor = $_POST['bColor'];
 $bAge = $_POST['bAge'];
 
-$sql = "INSERT INTO Birds (Name, Color, Age) VALUE (?, ?, ?)";
+$sql = "update Birds set Name=?, Color=?, Age=? where Birdid=?";
 //echo $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $bName, $bColor, $bAge);
+    $stmt->bind_param("ssii", $bName, $bColor, $bAge, $_POST['id']);
     $stmt->execute();
 ?>
     
-    <h1>Add Birds</h1>
+    <h1>Edit Birds</h1>
 <div class="alert alert-success" role="alert">
-  Bird added.
+  Bird edited.
 </div>
     <a href="birds.php" class="btn btn-primary">Go back</a>
   </body>
