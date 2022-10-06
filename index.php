@@ -7,7 +7,7 @@
     This webpage contains 4 tables from an sql database. (Instructors, Courses, Cars, Birds)
     </br>
     <br>
-    Each table allows you to add, edit, and delete records.
+        Each table allows you to add, edit, and delete records.
     </br>
   </body>
 

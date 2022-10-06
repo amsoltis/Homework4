@@ -9,10 +9,10 @@
   <table class="table table-striped">
   <thead>
     <tr>
-      <th>CourseID</th>
-      <th>InstructorID</th>
-      <th>Course</th>
-      <th>Section</th>
+      <th>CarID</th>
+      <th>Color</th>
+      <th>Make</th>
+      <th>Year</th>
       <th></th>
       <th></th>
     </tr>
@@ -40,19 +40,19 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["CourseID"]?></td>
-    <td><?=$row["InstructorID"]?></td>
-    <td><?=$row["CourseNumber"]?></td>
-    <td><?=$row["Section"]?></td>
+    <td><?=$row["CarID"]?></td>
+    <td><?=$row["Color"]?></td>
+    <td><?=$row["Make"]?></td>
+    <td><?=$row["Year"]?></td>
     <td>  
-        <form method="post" action="courses-edit.php">
-        <input type="hidden" name="id" value="<?=$row["CourseID"]?>" />
+        <form method="post" action="cars-edit.php">
+        <input type="hidden" name="id" value="<?=$row["CarID"]?>" />
         <input type="submit" value="Edit" />
       </form>
     </td>
     <td>
-      <form method="post" action="courses-delete.php">
-        <input type="hidden" name="id" value="<?=$row["CourseID"]?>" />
+      <form method="post" action="cars-delete.php">
+        <input type="hidden" name="id" value="<?=$row["CarID"]?>" />
         <input type="submit" value="Delete" />
       </form>
     </td>
