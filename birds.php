@@ -67,6 +67,6 @@ $conn->close();
     </table>
       </body>
 <footer>
-
-<?php require_once("footer.php"); ?>
+Delete button works, use with caution!
+<br><?php require_once("footer.php"); ?></br>
 </footer>
