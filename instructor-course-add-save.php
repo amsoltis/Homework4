@@ -16,13 +16,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$iFirstName = $_POST['iFirstName'];
-$iLastName = $_POST['iLastName'];
+$Course = $_POST['Course'];
+$Section = $_POST['Section'];
 
 $sql = "insert into Courses (InstructorID, CourseNumber, Section) value (?, ?, ?)";
 //echo $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("iss",$_POST['id'],$iFirstName, $iLastName);
+    $stmt->bind_param("iss",$_POST['id'],$Course, $Section);
     $stmt->execute();        
 ?>
     
