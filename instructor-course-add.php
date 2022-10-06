@@ -27,10 +27,15 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 ?>
-<form method="post" action="instructor-edit-save.php">
+<form method="post" action="instructor-course-add-save.php">
 <div class="mb-3">
-    <label for="instructorFirstName" class="form-label">First Name</label>
-    <input type="text" class="form-control" id="instructorFirstName" aria-describedby="nameHelp" name="iFirstName" value="<?=$row['FirstName']?>">
+    <label for="Course" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="Course" aria-describedby="nameHelp" name="Course" value="<?=$row['Course']?>">
+  </div>
+  <div class="mb-3">
+    <label for="Section" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="Section" aria-describedby="nameHelp" name="Sectio " value="<?=$row['Section']?>">
+    <div id="nameHelp" class="form-text">Enter the instructor's name.</div>
   </div>
   <input type="hidden" name="id" value="<?=$row['InstructorID']?>">
   <button type="submit" class="btn btn-primary">Submit</button>
