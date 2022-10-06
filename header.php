@@ -22,6 +22,15 @@
         <li class="nav-item">
           <a class="nav-link" href="./instructor.php">Instructors</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./courses.php">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./cars.php">Cars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./birds.php">Birds</a>
+        </li>
       </ul>
     </div>
   </div>
