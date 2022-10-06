@@ -12,6 +12,7 @@
     <br>
         In the 'Instructors' table you can add courses taught by that professor to the courses table by using the 'Add Course' button.
     </br>
+<br></br>
 </body>
 
 <footer>
