@@ -1,3 +1,6 @@
+
+
+
 <head>
 <?php require_once("header.php"); ?>
 </head>
@@ -20,16 +23,16 @@ $bName = $_POST['bName'];
 $bColor = $_POST['bColor'];
 $bAge = $_POST['bAge'];
 
-$sql = "update Birds set Name=?, Color=?, Age=? where Birdid=?";
+$sql = "INSERT INTO Birds (Name, Color, Age) VALUE (?, ?, ?)";
 //echo $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssii", $bName, $bColor, $bAge, $_POST['id']);
+    $stmt->bind_param("ssi", $bName, $bColor, $bAge);
     $stmt->execute();
 ?>
     
-    <h1>Edit Birds</h1>
+    <h1>Add Birds</h1>
 <div class="alert alert-success" role="alert">
-  Bird edited.
+  Bird added.
 </div>
     <a href="birds.php" class="btn btn-primary">Go back</a>
   </body>
@@ -37,4 +40,5 @@ $sql = "update Birds set Name=?, Color=?, Age=? where Birdid=?";
 <footer>
 <?php require_once("footer.php"); ?>
 </footer>
+
 
