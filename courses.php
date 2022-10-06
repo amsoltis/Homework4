@@ -11,7 +11,8 @@
     <tr>
       <th>CourseID</th>
       <th>InstructorID</th>
-      <th>Course - Section</th>
+      <th>Course</th>
+      <th>Section</th>
       <th></th>
       <th></th>
     </tr>
@@ -41,7 +42,8 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["CourseID"]?></td>
     <td><?=$row["InstructorID"]?></td>
-    <td><?=$row["CourseNumber"]."-"?><?=$row["Section"]?></td>
+    <td><?=$row["CourseNumber"]?></td>
+    <td><?=$row["Section"]?></td>
     <td>  
         <form method="post" action="courses-edit.php">
         <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
