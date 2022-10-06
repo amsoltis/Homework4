@@ -13,6 +13,7 @@
       <th>Name</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -52,6 +53,12 @@ if ($result->num_rows > 0) {
         <input type="submit" value="Delete" />
       </form>
     </td>
+        <td>
+      <form method="post" action="instructor-course-add.php">
+        <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
+        <input type="submit" value="Add Course" />
+      </form>
+    </td>
   </tr>
 <?php
   }
@@ -64,6 +71,7 @@ $conn->close();
     </table>
       </body>
 <footer>
+Use the Add Course button to add a course taught by this professor.
 Delete button works, use with caution!
 <?php require_once("footer.php"); ?>
 </footer>
