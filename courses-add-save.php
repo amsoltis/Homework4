@@ -23,7 +23,7 @@ $cSection = $_POST['cSection'];
 $sql = "insert into Courses (InstructorID, CourseNumber, Section) value (?, ?, ?)";
 //echo $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("iss", $cInstructor, $cNumber, $cSection);
+    $stmt->bind_param("isi", $cInstructor, $cNumber, $cSection);
     $stmt->execute();        
 ?>
     

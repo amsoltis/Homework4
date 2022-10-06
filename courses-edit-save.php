@@ -23,7 +23,7 @@ $cSection = $_POST['cSection'];
 $sql = "update Courses set InstructorID=?, CourseNumber=?, Section=? where CourseID=?";
 //echo $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("issi", $cInstructor, $cNumber, $cSection, $_POST['id']);
+    $stmt->bind_param("isii", $cInstructor, $cNumber, $cSection, $_POST['id']);
     $stmt->execute();
 ?>
     
