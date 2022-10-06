@@ -3,9 +3,8 @@
 </head>
 
 <body>
-    <h1>Instructors</h1>
-  <a href="instructor-add.php" class="btn btn-primary">Add New Instructor</a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <h1>Cars</h1>
+  <a href="cars-add.php" class="btn btn-primary">Add New Car</a>
   <table class="table table-striped">
   <thead>
     <tr>
@@ -31,7 +30,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * from Cars Order by CarID";
+$sql = "SELECT CarID, Color, Make, Year from Cars Order by CarID";
 //echo $sql;
 $result = $conn->query($sql);
 

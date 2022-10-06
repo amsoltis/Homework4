@@ -3,16 +3,15 @@
 </head>
 
 <body>
-    <h1>Courses</h1>
-  <a href="courses-add.php" class="btn btn-primary">Add New Course</a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <h1>Birds</h1>
+  <a href="birds-add.php" class="btn btn-primary">Add New Bird</a>
   <table class="table table-striped">
   <thead>
     <tr>
-      <th>CourseID</th>
-      <th>InstructorID</th>
-      <th>Course</th>
-      <th>Section</th>
+      <th>Bird ID</th>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Age</th>
       <th></th>
       <th></th>
     </tr>
@@ -31,7 +30,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT CourseID, InstructorID, CourseNumber, Section from Courses Order by CourseID";
+$sql = "SELECT Birdid, Name, Color, Age from Cars Order by CarID";
 //echo $sql;
 $result = $conn->query($sql);
 
@@ -40,19 +39,19 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["CourseID"]?></td>
-    <td><?=$row["InstructorID"]?></td>
-    <td><?=$row["CourseNumber"]?></td>
-    <td><?=$row["Section"]?></td>
+    <td><?=$row["Birdid"]?></td>
+    <td><?=$row["Name"]?></td>
+    <td><?=$row["Color"]?></td>
+    <td><?=$row["Age"]?></td>
     <td>  
-        <form method="post" action="courses-edit.php">
-        <input type="hidden" name="id" value="<?=$row["CourseID"]?>" />
+        <form method="post" action="bird-edit.php">
+        <input type="hidden" name="id" value="<?=$row["BirdID"]?>" />
         <input type="submit" value="Edit" />
       </form>
     </td>
     <td>
-      <form method="post" action="courses-delete.php">
-        <input type="hidden" name="id" value="<?=$row["CourseID"]?>" />
+      <form method="post" action="bird-delete.php">
+        <input type="hidden" name="id" value="<?=$row["BirdID"]?>" />
         <input type="submit" value="Delete" />
       </form>
     </td>
