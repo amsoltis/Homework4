@@ -72,7 +72,6 @@ $conn->close();
       </body>
 <footer>
 Use the Add Course button to add to the 'Courses' table a new course taught by this professor.
-<br>
+<br></br>
 <?php require_once("footer.php"); ?>
-</br>
 </footer>
