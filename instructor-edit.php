@@ -17,7 +17,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT InstructorID, FirstName, LastName from instructor where InstructorID=?";
+$sql = "SELECT InstructorID, FirstName, LastName from Instructor where InstructorID=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $_POST['id']);
 $stmt->execute();
