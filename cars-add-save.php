@@ -20,7 +20,7 @@ $cColor = $_POST['cColor'];
 $cMake = $_POST['cMake'];
 $cYear = $_POST['cYear'];
 
-$sql = "INSERT INTO Birds (Color, Make, Year) VALUE (?, ?, ?)";
+$sql = "INSERT INTO Cars (Color, Make, Year) VALUE (?, ?, ?)";
 //echo $sql;
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssi", $cColor, $cMake, $cYear);
@@ -31,7 +31,7 @@ $sql = "INSERT INTO Birds (Color, Make, Year) VALUE (?, ?, ?)";
 <div class="alert alert-success" role="alert">
   Cars added.
 </div>
-    <a href="birds.php" class="btn btn-primary">Go back</a>
+    <a href="cars.php" class="btn btn-primary">Go back</a>
   </body>
 
 <footer>
