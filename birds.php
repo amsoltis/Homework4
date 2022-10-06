@@ -30,7 +30,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT Birdid, Name, Color, Age from Cars Order by CarID";
+$sql = "SELECT Birdid, Name, Color, Age from Birds Order by Birdid";
 //echo $sql;
 $result = $conn->query($sql);
 
