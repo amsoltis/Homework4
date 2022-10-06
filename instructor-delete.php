@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 $sql = "Delete From Instructor where InstructorID=?";
 //echo $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $_POST['iid']);
+    $stmt->bind_param("i", $_POST['id']);
     $stmt->execute();
 ?>
     
@@ -28,7 +28,7 @@ $sql = "Delete From Instructor where InstructorID=?";
 <div class="alert alert-success" role="alert">
   Instructor deleted.
 </div>
-    <a href="instructors.php" class="btn btn-primary">Go back</a>
+    <a href="instructor.php" class="btn btn-primary">Go back</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 
