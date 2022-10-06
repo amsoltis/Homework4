@@ -8,6 +8,8 @@
     </br>
     <br>
         Each table allows you to add, edit, and delete records.
+        </br>
+    <br>
         In the 'Instructors' table you can add courses taught by that professor to the courses table by using the 'Add Course' button.
     </br>
   </body>
