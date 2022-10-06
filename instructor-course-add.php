@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 ?>
-<h1>Add course for <?=$row["LastName"]." "?><?=$row["FirstName"]?></a></h1>
+<h1>Add course taught by <?=$row["LastName"]." "?><?=$row["FirstName"]?></a></h1>
 
 <form method="post" action="instructor-course-add-save.php">
 <div class="mb-3">
