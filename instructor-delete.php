@@ -33,6 +33,8 @@ $sql = "Delete From Instructor where InstructorID=?";
   </body>
 
 <footer>
+<body>
 The delete function works, use with caution.
+</body>
 <?php require_once("footer.php"); ?>
 </footer>
