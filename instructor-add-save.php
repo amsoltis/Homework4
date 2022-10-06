@@ -30,7 +30,7 @@ $sql = "insert into Instructor (FirstName, LastName) value (?, ?)";
 <div class="alert alert-success" role="alert">
   New instructor added.
 </div>
-    <a href="instructors.php" class="btn btn-primary">Go back</a>
+    <a href="instructor.php" class="btn btn-primary">Go back</a>
   </body>
 
 <footer>
