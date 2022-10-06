@@ -17,9 +17,9 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 $iFirstName = $_POST['iFirstName'];
-iLastName = $_POST['iLastName'];
+$iLastName = $_POST['iLastName'];
 
-$sql = "Insert Into Instructor (FirstName, LastName) Values ('?', '?')";
+$sql = "INSERT INTO Instructor ('FirstName', 'LastName') VALUES ('?', '?')";
 //echo $sql;
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $iFirstName, $iLastName);
@@ -27,7 +27,7 @@ $sql = "Insert Into Instructor (FirstName, LastName) Values ('?', '?')";
 ?>
     <h1>Add Instructor</h1>
 <div class="alert alert-success" role="alert">
-  Instructor Added.
+  Instructor added.
 </div>
     <a href="instructor.php" class="btn btn-primary">Go back</a>
   </body>
