@@ -53,19 +53,7 @@ if ($result->num_rows > 0) {
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Delete Record
         </button>
-    </td>
-  </tr>
-<?php
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-?>
-  </tbody>
-    </table>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -84,7 +72,17 @@ $conn->close();
     </div>
   </div>
 </div>
-
+    </td>
+  </tr>
+<?php
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+  </tbody>
+    </table>
       </body>
 <footer>
 
