@@ -3,7 +3,7 @@
 </head>
 
 <body>
-    <h1>Edit Instructor</h1>
+    <h1>Add course for value="<?=$row["InstructorID"]?>"</h1>
 <?php
 $servername = "localhost";
 $username = "asoltiso_asoltis";
