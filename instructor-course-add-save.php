@@ -31,7 +31,7 @@ $sql = "insert into Courses (InstructorID, CourseNumber, Section) value (?, ?, ?
   New course added.
 </div>
     <a href="instructor.php" class="btn btn-primary">Back to Instructor</a>
-    <a href="course.php" class="btn btn-primary">Back to Courses</a>
+    <a href="courses.php" class="btn btn-primary">Back to Courses</a>
   </body>
 
 <footer>
