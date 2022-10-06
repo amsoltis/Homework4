@@ -3,7 +3,7 @@
 </head>
 
 <body>
-    <h1>Add course for value="<?=$row["InstructorID"]?>"</h1>
+    
 <?php
 $servername = "localhost";
 $username = "asoltiso_asoltis";
@@ -23,10 +23,13 @@ $stmt->bind_param("i", $_POST['id']);
 $stmt->execute();
 $result = $stmt->get_result();
 
+
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
 ?>
+<h1>Add course for <?=$row["InstructorID"]?>"</h1>
+
 <form method="post" action="instructor-course-add-save.php">
 <div class="mb-3">
     <label for="Course" class="form-label">Course Number</label>
