@@ -30,7 +30,8 @@ $sql = "insert into Courses (InstructorID, CourseNumber, Section) value (?, ?, ?
 <div class="alert alert-success" role="alert">
   New course added.
 </div>
-    <a href="instructor.php" class="btn btn-primary">Go back</a>
+    <a href="instructor.php" class="btn btn-primary">Back to Instructor</a>
+    <a href="course.php" class="btn btn-primary">Back to Courses</a>
   </body>
 
 <footer>
