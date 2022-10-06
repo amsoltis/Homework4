@@ -1,7 +1,3 @@
-<head>
-<?php require_once("header.php"); ?>
-</head>
-
   <body>
     
 <?php
@@ -30,7 +26,3 @@ $sql = "Delete From Instructor where InstructorID=?";
 </div>
     <a href="instructor.php" class="btn btn-primary">Go back</a>
     </body>
-
-<footer>
-<?php require_once("footer.php"); ?>
-</footer>
