@@ -17,12 +17,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 $iFirstName = $_POST['iFirstName'];
-iLastName = $_POST['iLastName'];
 
-$sql = "update Instructor set FirstName=?, LastName=? where InstructorID=?";
+$sql = "update Instructor set FirstName=? where InstructorID=?";
 //echo $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $iFirstName, $iLastName, $_POST['id']);
+    $stmt->bind_param("si", $iFirstName, $_POST['id']);
     $stmt->execute();
 ?>
     

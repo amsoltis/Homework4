@@ -28,13 +28,9 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
 <form method="post" action="instructor-edit-save.php">
-  <div class="mb-3">
-    <label for="instructorFirtsName" class="form-label">First Name</label>
-    <input type="text" class="form-control" id="instructorFirtsName" aria-describedby="nameHelp" name="iFirstName" value="<?=$row["FirstName"]." "?>">
-  </div>
-    <div class="mb-3">
-    <label for="instructorLastName" class="form-label">Last Name</label>
-    <input type="text" class="form-control" id="instructorLastName" aria-describedby="nameHelp" name="iLastName" value="<?=$row["LastName"]." "?>">
+<div class="mb-3">
+    <label for="instructorName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="instructorName" aria-describedby="nameHelp" name="iFirstName" value="<?=$row['FirstName']?>">
     <div id="nameHelp" class="form-text">Enter the instructor's name.</div>
   </div>
   <input type="hidden" name="id" value="<?=$row['InstructorID']?>">
