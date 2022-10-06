@@ -20,7 +20,7 @@ $bName = $_POST['bName'];
 $bColor = $_POST['bColor'];
 $bAge = $_POST['bAge'];
 
-$sql = "update Birds set bName=?, bColor=?, bAge=? where CourseID=?";
+$sql = "update Birds set bName=?, bColor=?, bAge=? where Birdid=?";
 //echo $sql;
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssii", $bName, $bColor, $bAge, $_POST['id']);
