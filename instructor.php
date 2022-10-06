@@ -29,7 +29,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT InstructorID, LastName, FirstName FROM Instructor";
+$sql = "SELECT InstructorID, LastName, FirstName FROM Instructor Order by InstructorID";
 //echo $sql;
 $result = $conn->query($sql);
 
