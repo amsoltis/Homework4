@@ -45,13 +45,13 @@ if ($result->num_rows > 0) {
     <td><?=$row["Age"]?></td>
     <td>  
         <form method="post" action="birds-edit.php">
-        <input type="hidden" name="id" value="<?=$row["BirdID"]?>" />
+        <input type="hidden" name="id" value="<?=$row["Birdid"]?>" />
         <input type="submit" value="Edit" />
       </form>
     </td>
     <td>
       <form method="post" action="birds-delete.php">
-        <input type="hidden" name="id" value="<?=$row["BirdID"]?>" />
+        <input type="hidden" name="id" value="<?=$row["Birdid"]?>" />
         <input type="submit" value="Delete" />
       </form>
     </td>
