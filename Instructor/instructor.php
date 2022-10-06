@@ -1,5 +1,5 @@
   <head>
-<?php require_once("header.php"); ?>
+<?php require_once("./header.php"); ?>
 </head>
 
 <body>
@@ -65,5 +65,5 @@ $conn->close();
       </body>
 <footer>
 Delete button works, use with caution!
-<?php require_once("footer.php"); ?>
+<?php require_once("./footer.php"); ?>
 </footer>
