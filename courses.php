@@ -42,7 +42,8 @@ if ($result->num_rows > 0) {
     <td><?=$row["CourseID"]?></td>
     <td><?=$row["InstructorID"]?></td>
     <td><?=$row["CourseNumber"]."-"?><?=$row["Section"]?></td>
-      <form method="post" action="courses-edit.php">
+    <td>  
+        <form method="post" action="courses-edit.php">
         <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
         <input type="submit" value="Edit" />
       </form>
