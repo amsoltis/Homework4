@@ -3,7 +3,7 @@
 </head>
 
 <body>
-<form method="post" action="instructor-edit-save.php">
+<form method="post" action="instructor-add-save.php">
   <div class="mb-3">
     <label for="instructorName" class="form-label">First Name</label>
     <input type="text" class="form-control" id="instructorName" aria-describedby="nameHelp" name="iFirstName" value="<?=$row["FirstName"]." "?>">

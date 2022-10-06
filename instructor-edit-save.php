@@ -16,7 +16,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$iName = $_POST['iName'];
+$iFirstName = $_POST['iFirstName'];
+iLastName = $_POST['iLastName'];
 
 $sql = "update Instructor set FirstName=?, LastName=? where InstructorID=?";
 //echo $sql;
