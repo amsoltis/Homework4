@@ -3,7 +3,7 @@
 </head>
 
 <body>
-<form method="post" action="courses-edit-save.php">
+<form method="post" action="courses-add-save.php">
 <div class="mb-3">
     <label for="courseNumber" class="form-label">Course Number</label>
     <input type="text" class="form-control" id="courseNumber" aria-describedby="nameHelp" name="cNumber" value="<?=$row['CourseNumber']?>">
