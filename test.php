@@ -115,6 +115,24 @@ body {font-family: Arial, Helvetica, sans-serif;}
   </div>
 
 </div>
+    </td>
+    <td>
+      <form method="post" action="cars-delete.php">
+        <input type="hidden" name="id" value="<?=$row["CarID"]?>" />
+        <input type="submit" value="Delete" />
+      </form>
+    </td>
+  </tr>
+<?php
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+  </tbody>
+    </table>
+      </body>
 
 <script>
 // Get the modal
@@ -143,24 +161,7 @@ window.onclick = function(event) {
   }
 }
 </script>
-    </td>
-    <td>
-      <form method="post" action="cars-delete.php">
-        <input type="hidden" name="id" value="<?=$row["CarID"]?>" />
-        <input type="submit" value="Delete" />
-      </form>
-    </td>
-  </tr>
-<?php
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-?>
-  </tbody>
-    </table>
-      </body>
+
 <footer>
 <?php require_once("footer.php"); ?>
 </footer>
