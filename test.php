@@ -2,6 +2,30 @@
 <?php require_once("header.php"); ?>
 </head>
 
+<?php
+$servername = "localhost";
+$username = "asoltiso_asoltis";
+$password = "OUcreate!";
+$dbname = "asoltiso_homework3";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT CourseID, InstructorID, CourseNumber, Section from Courses WHERE CourseID=?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $_POST['id']);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
