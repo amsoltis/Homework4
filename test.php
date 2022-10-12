@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Add':
         $sqlAdd = "insert into Instructor (FirstName, LastName) value (?, ?)";
         $stmtAdd = $conn->prepare($sql);
-        $stmtAdd->bind_param("ss", $_POST['iName'], $_POST['iLastName']);
+        $stmtAdd->bind_param("ss", $_POST['iFirstName'], $_POST['iLastName']);
         $stmtAdd->execute();   
       echo '<div class="alert alert-success" role="alert">New instructor added.</div>';
       break;
@@ -135,10 +135,12 @@ $conn->close();
             <div class="modal-body">
               <form method="post" action="">
                 <div class="mb-3">
-                  <label for="instructorName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="instructorName" aria-describedby="nameHelp" name="iName">
-                  <div id="nameHelp" class="form-text">Enter the instructor's name.</div>
-                </div>
+                  <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">First Name</label>
+                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iFirstName" value="<?=$row['FirstName']?>">
+                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iLastName" value="<?=$row['LastName']?>">
+                          <div id="editInstructor<?=$row["InstructorID"]?>Help" class="form-text">Enter the instructor's name.</div>
+                        </div>
                 <input type="hidden" name="saveType" value="Add">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
