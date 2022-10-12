@@ -88,7 +88,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 </style>
 <!-- Trigger/Open The Modal -->
-<button id="$("CarID")">Edit</button>
+<button id="myBtn">Edit</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -139,7 +139,7 @@ $conn->close();
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("CarID");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
