@@ -88,7 +88,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 </style>
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Edit</button>
+<button id="$("CarID")">Edit</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
