@@ -11,7 +11,7 @@
   </div>
   <div class="mb-3">
     <label for="instructorLastName" class="form-label">Last Name</label>
-    <input type="text" class="form-control" id="instructorLastName" aria-describedby="nameHelp" name="iLastName" value="<?=$row['LastName']?>">
+    <input type="text" class="form-control" id="instructorLastName" aria-describedby="nameHelp" name="iLastName">
     <div id="nameHelp" class="form-text">Enter the instructor's name.</div>
   </div>
 
