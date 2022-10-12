@@ -45,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-    
       <h1>Instructors</h1>
       <table class="table table-striped">
         <thead>
@@ -103,7 +102,7 @@ if ($result->num_rows > 0) {
               <form method="post" action="">
                 <input type="hidden" name="iid" value="<?=$row["InstructorID"]?>" />
                 <input type="hidden" name="saveType" value="Delete">
-                <button type="submit" class="btn" onclick="return confirm('Are you sure?')">Delete</button>
+                <button type="submit" class="btn" onclick="return confirm('Are you sure?')"> Delete </button>
               </form>
             </td>
           </tr>
