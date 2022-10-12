@@ -154,5 +154,11 @@ $conn->close();
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-  </body>
+  
+    In the 'Instructors' table you can add courses taught by that professor to the courses table by using the 'Add Course' button. 
+    </body>
+    <footer>
+<?php require_once("footer.php"); ?>
+</footer>
+
 </html>
