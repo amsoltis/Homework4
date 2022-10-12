@@ -8,7 +8,6 @@
 <form method="post" action="cars-add-save.php">
 <div class="mb-3">
     <label for="Color" class="form-label">Car Color</label>
-    <input type="text" class="form-control" id="Color" aria-describedby="nameHelp" name="cColor" value="<?=$row['Color']?>">
   </div>
   <div class="mb-3">
     <label for="Make" class="form-label">Car Make</label>
