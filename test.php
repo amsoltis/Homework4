@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmtEdit->bind_param("ssi", $_POST['iFirstName'], $_POST['iLastName'], $_POST['iid']);
       $stmtEdit->execute();
       echo '<div class="alert alert-success" role="alert">Instructor edited.</div>';
+      break;
     case 'Delete':
         $sqlDelete = "Delete From Instructor where InstructorID=?";
         $stmtDelete = $conn->prepare($sqlDelete);
