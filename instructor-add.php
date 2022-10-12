@@ -5,7 +5,7 @@
 <body>
 <h1>Add Instructor</h1>
 <form method="post" action="instructor-add-save.php">
-<div class="mb-3">
+<<div class="mb-3">
     <label for="instructorFirstName" class="form-label">First Name</label>
     <input type="text" class="form-control" id="instructorFirstName" aria-describedby="nameHelp" name="iFirstName" value="<?=$row['FirstName']?>">
   </div>
@@ -18,7 +18,6 @@
   <input type="hidden" name="id" value="<?=$row['InstructorID']?>">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-  </body>
 
 <footer>
 <?php require_once("footer.php"); ?>
