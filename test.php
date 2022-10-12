@@ -38,8 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo '<div class="alert alert-success" role="alert">Instructor edited.</div>';
     case 'Delete':
         $sqlDelete = "Delete From Instructor where InstructorID=?";
-        $stmtDelete = $conn->prepare($sql);
-        $stmtDelete->bind_param("i", $_POST['id']);
+        $stmtDelete = $conn->prepare($sqlDelete);
+        $stmtDelete->bind_param("i", $_POST['iid']);
         $stmtDelete->execute();
       echo '<div class="alert alert-success" role="alert">Instructor deleted.</div>';
   }
