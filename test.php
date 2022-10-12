@@ -107,7 +107,7 @@ if ($result->num_rows > 0) {
             <td>
       <form method="post" action="instructor-course-add.php">
         <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
-        <input type="submit" value="Add Course" />
+        <input type="submit" class="btn" value="Add Course" />
       </form>
     </td>
           </tr>
