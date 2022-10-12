@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Add':
         $sqlAdd = "insert into Instructor (FirstName, LastName) value (?, ?)";
         $stmtAdd = $conn->prepare($sql);
-        $stmtAdd->bind_param("ss", $_POST['iFirstName'], $_POST['iLastName']);
+        $stmtAdd->bind_param("ss", $_POST['iName'], $_POST['iLastName']);
         $stmtAdd->execute();   
       echo '<div class="alert alert-success" role="alert">New instructor added.</div>';
       break;
