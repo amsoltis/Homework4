@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Edit':
       $sqlEdit = "update Instructor set FirstName=?, LastName=? where InstructorID=?";
       $stmtEdit = $conn->prepare($sqlEdit);
-      $stmtEdit->bind_param("ssi", $_POST['iFirstName'], $_POST['id']);
+      $stmtEdit->bind_param("si", $_POST['iFirstName'], $_POST['id']);
       $stmtEdit->execute();
       echo '<div class="alert alert-success" role="alert">Instructor edited.</div>';
     case 'Delete':
