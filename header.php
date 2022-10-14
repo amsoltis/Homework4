@@ -31,6 +31,9 @@
         <li class="nav-item">
           <a class="nav-link" href="./birds.php">Birds</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./test.php">Test</a>
+        </li>
       </ul>
     </div>
   </div>
