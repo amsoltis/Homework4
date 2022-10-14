@@ -21,10 +21,9 @@ $cMake = $_POST['cMake'];
 $cYear = $_POST['cYear'];
 
 $sql = "INSERT INTO Cars (Color, Make, Year) VALUE (?, ?, ?)";
-//echo $sql;
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $cColor, $cMake, $cYear);
-    $stmt->execute();
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ssi", $cColor, $cMake, $cYear);
+$stmt->execute();
 ?>
     
     <h1>Add Cars</h1>

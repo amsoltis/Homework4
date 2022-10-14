@@ -21,10 +21,10 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   switch ($_POST['saveType']) {
     case 'Add':
-        $sqlAdd = "insert into Instructor (FirstName, LastName) value (?, ?)";
+        $sqlAdd = "INSERT INTO Cars (Color, Make, Year) VALUE (?, ?, ?)";
         $stmtAdd = $conn->prepare($sqlAdd);
-        $stmtAdd->bind_param("ss", $_POST['iFirstName'], $_POST['iLastName']);
-        $stmtAdd->execute();   
+        $stmtAdd->bind_param("ssi", $cColor, $cMake, $cYear);
+        $stmtAdd->execute();  
       echo '<div class="alert alert-success" role="alert">New instructor added.</div>';
       break;
     case 'Edit':
@@ -82,7 +82,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Color</th>
+            <th>Make</th>
+            <th>Year</th>
             <th></th>
             <th></th>
           </tr>
@@ -90,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <tbody>
           
 <?php
-$sql = "SELECT InstructorID, LastName, FirstName FROM Instructor Order by InstructorID";
+$sql = "SELECT CarID, Color, Make, Year from Cars Order by CarID";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -99,8 +101,10 @@ if ($result->num_rows > 0) {
 ?>
           
           <tr>
-            <td><?=$row["InstructorID"]?></td>
-            <td><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
+            <td><?=$row["CarID"]?></td>
+            <td><?=$row["Color"]?></td>
+            <td><?=$row["Make"]?></td>
+            <td><?=$row["Year"]?></td>
             <td>
               <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editInstructor<?=$row["InstructorID"]?>">
                 Edit
