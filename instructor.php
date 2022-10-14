@@ -157,7 +157,7 @@ $conn->close();
         </tbody>
       </table>
 
-    In the 'Instructors' table you can add courses taught by that professor to the courses table by using the 'Add Course' button. </br>
+    In the 'Instructors' table you can add courses taught by that professor to the courses table by using the 'Add Course' button. <br/>
     </body>
     <footer>
 <?php require_once("footer.php"); ?>
