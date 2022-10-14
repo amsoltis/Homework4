@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-      <h1>Instructors</h1>
+      <h1>Courses</h1>
       <table class="table table-striped">
           
           <!-- Button trigger modal -->
@@ -83,7 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th></th>
             <th></th>
             <th></th>
           </tr>
@@ -138,12 +137,6 @@ if ($result->num_rows > 0) {
                 <button type="submit" class="btn" onclick="return confirm('Are you sure?')"> Delete </button>
               </form>
             </td>
-            <td>
-      <form method="post" action="instructor-course-add.php">
-        <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
-        <input type="submit" class="btn" value="Add Course" />
-      </form>
-    </td>
           </tr>
           
 <?php
