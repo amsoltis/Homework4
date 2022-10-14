@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-      <h1>Courses</h1>
+      <h1>Cars</h1>
       <table class="table table-striped">
           
           <!-- Button trigger modal -->
