@@ -108,7 +108,7 @@ if ($result->num_rows > 0) {
             <td><?=$row["Make"]?></td>
             <td><?=$row["Year"]?></td>
             <td>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCar<?=$row["carID"]?>">
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCar<?=$row["CarID"]?>">
                 Edit
               </button>
               <div class="modal fade" id="editCar<?=$row["carID"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editCar<?=$row["carID"]?>Label" aria-hidden="true">
