@@ -60,17 +60,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="post" action="">
+              <form method="post" action="cars-add-save.php">
                 <div class="mb-3">
-                  <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">First Name</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iFirstName">
-                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Last Name</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iLastName">
-                          <div id="editInstructor<?=$row["InstructorID"]?>Help" class="form-text">Enter the instructor's name.</div>
-                        </div>
-                <input type="hidden" name="saveType" value="Add">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+                    <label for="Color" class="form-label">Car Color</label>
+                    <input type="text" class="form-control" id="Color" aria-describedby="nameHelp" name="cColor"> 
+                  </div>
+                  <div class="mb-3">
+                    <label for="Make" class="form-label">Car Make</label>
+                    <input type="text" class="form-control" id="Make" aria-describedby="nameHelp" name="cMake">
+                  </div>
+                    <div class="mb-3">
+                    <label for="Year" class="form-label">Car Year</label>
+                    <input type="text" class="form-control" id="TYear" aria-describedby="nameHelp" name="cYear">
+                  </div>
+                  <input type="hidden" name="id" value="<?=$row['CarID']?>">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
           </div>
         </div>
