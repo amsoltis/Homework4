@@ -32,14 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmtEdit = $conn->prepare($sqlEdit);
       $stmtEdit->bind_param("ssii", $_POST['cColor'], $_POST['cMake'], $_POST['cYear'], $_POST['cid']);
       $stmtEdit->execute();
-      echo '<div class="alert alert-success" role="alert">Instructor edited.</div>';
+      echo '<div class="alert alert-success" role="alert">Car edited.</div>';
       break;
     case 'Delete':
         $sqlDelete = "Delete From Cars where CarID=?";
         $stmtDelete = $conn->prepare($sqlDelete);
         $stmtDelete->bind_param("i", $_POST['cid']);
         $stmtDelete->execute();
-      echo '<div class="alert alert-success" role="alert">Instructor deleted.</div>';
+      echo '<div class="alert alert-success" role="alert">Car deleted.</div>';
   }
 }
 ?>
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="addCourse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addInstructorLabel" aria-hidden="true">
+      <div class="modal fade" id="addCourse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addCarLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -115,7 +115,7 @@ if ($result->num_rows > 0) {
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editCar<?=$row["CarID"]?>Label">Edit Instructor</h1>
+                      <h1 class="modal-title fs-5" id="editCar<?=$row["CarID"]?>Label">Edit Car</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
