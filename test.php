@@ -73,6 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="Year" class="form-label">Car Year</label>
                     <input type="text" class="form-control" id="cYear" aria-describedby="nameHelp" name="cYear">
                   </div>
+                  <input type="hidden" name="id" value="<?=$row['CarID']?>">
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
           </div>
