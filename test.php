@@ -126,7 +126,7 @@ if ($result->num_rows > 0) {
                           <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Make</label>
                           <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cMake" value="<?=$row['Make']?>">
                           <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Year</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cYake" value="<?=$row['Year']?>">
+                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cYear" value="<?=$row['Year']?>">
                           <div id="editCar<?=$row["CarID"]?>Help" class="form-text">Enter the Car Information.</div>
                         </div>
                         <input type="hidden" name="cid" value="<?=$row['CarID']?>">
