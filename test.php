@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="modal" action="">
+              <form method="post" action="">
                 <div class="mb-3">
                     <label for="Color" class="form-label">Car Color</label>
                     <input type="text" class="form-control" id="cColor" aria-describedby="nameHelp" name="cColor"> 
