@@ -129,7 +129,7 @@ if ($result->num_rows > 0) {
                           <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cYake" value="<?=$row['Year']?>">
                           <div id="editCar<?=$row["CarID"]?>Help" class="form-text">Enter the Car Information.</div>
                         </div>
-                        <input type="hidden" name="iid" value="<?=$row['CarID']?>">
+                        <input type="hidden" name="cid" value="<?=$row['CarID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
