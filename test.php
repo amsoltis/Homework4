@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <table class="table table-striped">
           
           <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCar">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addInaddCarstructor">
         Add New
       </button>
 
@@ -62,20 +62,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="modal-body">
               <form method="post" action="">
                 <div class="mb-3">
-                    <label for="Color" class="form-label">Car Color</label>
-                    <input type="text" class="form-control" id="cColor" aria-describedby="nameHelp" name="cColor"> 
-                  </div>
-                  <div class="mb-3">
-                    <label for="Make" class="form-label">Car Make</label>
-                    <input type="text" class="form-control" id="cMake" aria-describedby="nameHelp" name="cMake">
-                  </div>
-                    <div class="mb-3">
-                    <label for="Year" class="form-label">Car Year</label>
-                    <input type="text" class="form-control" id="cYear" aria-describedby="nameHelp" name="cYear">
-                  </div>
-                   <input type="hidden" name="saveType" value="Add">
+                  <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Make</label>
+                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cMake">
+                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Color</label>
+                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cColor">
+                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Year</label>
+                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cYear">
+                          <div id="editCar<?=$row["CarID"]?>Help" class="form-text">Enter the instructor's name.</div>
+                        </div>
+                <input type="hidden" name="saveType" value="Add">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+              </form>
             </div>
           </div>
         </div>
