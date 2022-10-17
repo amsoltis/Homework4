@@ -111,25 +111,25 @@ if ($result->num_rows > 0) {
               <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCar<?=$row["CarID"]?>">
                 Edit
               </button>
-              <div class="modal fade" id="editCar<?=$row["carID"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editCar<?=$row["carID"]?>Label" aria-hidden="true">
+              <div class="modal fade" id="editCar<?=$row["CarID"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editCar<?=$row["CarID"]?>Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editCar<?=$row["carID"]?>Label">Edit Instructor</h1>
+                      <h1 class="modal-title fs-5" id="editCar<?=$row["CarID"]?>Label">Edit Instructor</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editCar<?=$row["carID"]?>Name" class="form-label">Color</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["carID"]?>Name" aria-describedby="editCar<?=$row["carID"]?>Help" name="cColor" value="<?=$row['Color']?>">
-                          <label for="editCar<?=$row["carID"]?>Name" class="form-label">Make</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["carID"]?>Name" aria-describedby="editCar<?=$row["carID"]?>Help" name="cMake" value="<?=$row['Make']?>">
-                          <label for="editCar<?=$row["carID"]?>Name" class="form-label">Year</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["carID"]?>Name" aria-describedby="editCar<?=$row["carID"]?>Help" name="cYake" value="<?=$row['Year']?>">
-                          <div id="editCar<?=$row["carID"]?>Help" class="form-text">Enter the Car Information.</div>
+                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Color</label>
+                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cColor" value="<?=$row['Color']?>">
+                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Make</label>
+                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cMake" value="<?=$row['Make']?>">
+                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Year</label>
+                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cYake" value="<?=$row['Year']?>">
+                          <div id="editCar<?=$row["CarID"]?>Help" class="form-text">Enter the Car Information.</div>
                         </div>
-                        <input type="hidden" name="iid" value="<?=$row['carID']?>">
+                        <input type="hidden" name="iid" value="<?=$row['CarID']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
