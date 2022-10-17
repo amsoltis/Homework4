@@ -21,11 +21,11 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   switch ($_POST['saveType']) {
     case 'Add':
-        $sqlAdd = "INSERT INTO Cars (Color, Make, Year) VALUE (?, ?, ?)";
+        $sqlAdd = "insert into Instructor (FirstName, LastName) value (?, ?)";
         $stmtAdd = $conn->prepare($sqlAdd);
-        $stmtAdd->bind_param("ssi", $cColor, $cMake, $cYear);
-        $stmtAdd->execute();  
-      echo '<div class="alert alert-success" role="alert">New car added.</div>';
+        $stmtAdd->bind_param("ss", $_POST['iFirstName'], $_POST['iLastName']);
+        $stmtAdd->execute();   
+      echo '<div class="alert alert-success" role="alert">New instructor added.</div>';
       break;
     case 'Edit':
       $sqlEdit = "update Instructor set FirstName=?, LastName=? where InstructorID=?";
@@ -43,32 +43,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-      <h1>Cars</h1>
+      <h1>Instructors</h1>
       <table class="table table-striped">
           
           <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addInaddCarstructor">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addInstructor">
         Add New
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="addCar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addCarLabel" aria-hidden="true">
+      <div class="modal fade" id="addInstructor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addInstructorLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addCarLabel">Add Car</h1>
+              <h1 class="modal-title fs-5" id="addInstructorLabel">Add Instructor</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form method="post" action="">
                 <div class="mb-3">
-                  <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Make</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cMake">
-                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Color</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cColor">
-                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Year</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cYear">
-                          <div id="editCar<?=$row["CarID"]?>Help" class="form-text">Enter the instructor's name.</div>
+                  <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">First Name</label>
+                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iFirstName">
+                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iLastName">
+                          <div id="editInstructor<?=$row["InstructorID"]?>Help" class="form-text">Enter the instructor's name.</div>
                         </div>
                 <input type="hidden" name="saveType" value="Add">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -89,12 +87,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <th>Year</th>
             <th></th>
             <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           
 <?php
-$sql = "SELECT CarID, Color, Make, Year from Cars Order by CarID";
+$sql = "SELECT * FROM Cars";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -143,6 +142,12 @@ if ($result->num_rows > 0) {
                 <button type="submit" class="btn" onclick="return confirm('Are you sure?')"> Delete </button>
               </form>
             </td>
+            <td>
+      <form method="post" action="instructor-course-add.php">
+        <input type="hidden" name="id" value="<?=$row["InstructorID"]?>" />
+        <input type="submit" class="btn" value="Add Course" />
+      </form>
+    </td>
           </tr>
           
 <?php
