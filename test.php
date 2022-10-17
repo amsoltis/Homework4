@@ -63,18 +63,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <form method="modal" action="">
                 <div class="mb-3">
                     <label for="Color" class="form-label">Car Color</label>
-                    <input type="text" class="form-control" id="Color" aria-describedby="nameHelp" name="cColor"> 
+                    <input type="text" class="form-control" id="cColor" aria-describedby="nameHelp" name="cColor"> 
                   </div>
                   <div class="mb-3">
                     <label for="Make" class="form-label">Car Make</label>
-                    <input type="text" class="form-control" id="Make" aria-describedby="nameHelp" name="cMake">
+                    <input type="text" class="form-control" id="cMake" aria-describedby="nameHelp" name="cMake">
                   </div>
                     <div class="mb-3">
                     <label for="Year" class="form-label">Car Year</label>
-                    <input type="text" class="form-control" id="TYear" aria-describedby="nameHelp" name="cYear">
+                    <input type="text" class="form-control" id="cYear" aria-describedby="nameHelp" name="cYear">
                   </div>
-                  <input type="hidden" name="id" value="<?=$row['CarID']?>">
-                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
           </div>
