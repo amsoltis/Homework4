@@ -45,8 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
       <h1>Instructors</h1>
 
-      <label for="cars">Choose a car:</label>
-
       <table class="table table-striped">
           
           <!-- Button trigger modal -->
