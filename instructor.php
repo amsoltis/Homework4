@@ -92,13 +92,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $sql = "SELECT InstructorID, LastName, FirstName FROM Instructor Order by InstructorID";
 $result = $conn->query($sql);
 
-<select>
-<?php foreach( $results as $row ){
-    echo "<option>" . $row[LastName] . "</option>";
-   }
- ?> 
-</select>
-
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
@@ -150,6 +143,14 @@ if ($result->num_rows > 0) {
 } else {
   echo "0 results";
 }
+
+<select>
+<?php foreach( $results as $row ){
+    echo "<option>" . $row[LastName] . "</option>";
+   }
+ ?> 
+</select>
+
 $conn->close();
 ?>
           
