@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Edit':
       $sqlEdit = "update Courses set InstructorID=?, Course=?, Section=? where CourseID=?";
       $stmtEdit = $conn->prepare($sqlEdit);
-      $stmtEdit->bind_param("issi", $_POST['cInsID'], $_POST['cCourse'], $_POST['cSection'], $_POST['cid']);
+      $stmtEdit->bind_param("isii", $_POST['cInsID'], $_POST['cCourse'], $_POST['cSection'], $_POST['cid']);
       $stmtEdit->execute();
       echo '<div class="alert alert-success" role="alert">Course edited.</div>';
       break;
@@ -121,11 +121,11 @@ if ($result->num_rows > 0) {
                     <div class="modal-body">
                       <form method="post" action="">  
                         <div class="mb-3">
-                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Color</label>
+                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">InstructorID</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cInsID" value="<?=$row['Name']?>">
-                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Make</label>
+                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Course Number</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse" value="<?=$row['Color']?>">
-                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Year</label>
+                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Section</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cSection" value="<?=$row['Age']?>">
                           <div id="editCourse<?=$row["CourseID"]?>Help" class="form-text">Enter the Course Information.</div>
                         </div>
