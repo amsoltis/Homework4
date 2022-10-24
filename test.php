@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo '<div class="alert alert-success" role="alert">New Course added.</div>';
       break;
     case 'Edit':
-      $sqlEdit = "update Courses set InstructorID=?, Course=?, Section=? where CourseID=?";
+      $sqlEdit = "update Courses set InstructorID=?, CourseNumber=?, Section=? where CourseID=?";
       $stmtEdit = $conn->prepare($sqlEdit);
       $stmtEdit->bind_param("isii", $_POST['cInsID'], $_POST['cCourse'], $_POST['cSection'], $_POST['cid']);
       $stmtEdit->execute();
@@ -122,11 +122,11 @@ if ($result->num_rows > 0) {
                       <form method="post" action="">  
                         <div class="mb-3">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">InstructorID</label>
-                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cInsID" value="<?=$row['Name']?>">
-                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Course Number</label>
-                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse" value="<?=$row['Color']?>">
+                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cInsID" value="<?=$row['InstructorID']?>">
+                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">CourseNumber</label>
+                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse" value="<?=$row['CourseNumber']?>">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Section</label>
-                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cSection" value="<?=$row['Age']?>">
+                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cSection" value="<?=$row['Section']?>">
                           <div id="editCourse<?=$row["CourseID"]?>Help" class="form-text">Enter the Course Information.</div>
                         </div>
                         <input type="hidden" name="cid" value="<?=$row['CourseID']?>">
