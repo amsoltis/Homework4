@@ -25,21 +25,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmtAdd = $conn->prepare($sqlAdd);
         $stmtAdd->bind_param("ssi", $_POST['bName'], $_POST['bColor'], $_POST['bAge']);
         $stmtAdd->execute();   
-      echo '<div class="alert alert-success" role="alert">New Car added.</div>';
+      echo '<div class="alert alert-success" role="alert">New Bird added.</div>';
       break;
     case 'Edit':
       $sqlEdit = "update Birds set Name=?, Color=?, Age=? where Birdid=?";
       $stmtEdit = $conn->prepare($sqlEdit);
       $stmtEdit->bind_param("ssii", $_POST['bName'], $_POST['bColor'], $_POST['bAge'], $_POST['bid']);
       $stmtEdit->execute();
-      echo '<div class="alert alert-success" role="alert">Car edited.</div>';
+      echo '<div class="alert alert-success" role="alert">Bird edited.</div>';
       break;
     case 'Delete':
-        $sqlDelete = "Delete From Cars where CarID=?";
+        $sqlDelete = "Delete From Birds where Birdid=?";
         $stmtDelete = $conn->prepare($sqlDelete);
-        $stmtDelete->bind_param("i", $_POST['cid']);
+        $stmtDelete->bind_param("i", $_POST['bid']);
         $stmtDelete->execute();
-      echo '<div class="alert alert-success" role="alert">Car deleted.</div>';
+      echo '<div class="alert alert-success" role="alert">Bird deleted.</div>';
   }
 }
 ?>
@@ -52,11 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="addCourse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addCarLabel" aria-hidden="true">
+      <div class="modal fade" id="addCourse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addBirdLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addCarLabel">Add Car</h1>
+              <h1 class="modal-title fs-5" id="addBirdLabel">Add Bird</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           <input type="text" class="form-control" id="editBird<?=$row["Birdid"]?>Name" aria-describedby="editBird<?=$row["Birdid"]?>Help" name="bColor">
                           <label for="editBird<?=$row["Birdid"]?>Name" class="form-label">Age</label>
                           <input type="text" class="form-control" id="editBird<?=$row["Birdid"]?>Name" aria-describedby="editBird<?=$row["Birdid"]?>Help" name="bAge">
-                          <div id="editBird<?=$row["Birdid"]?>Help" class="form-text">Enter the Car information.</div>
+                          <div id="editBird<?=$row["Birdid"]?>Help" class="form-text">Enter the Bird information.</div>
                         </div>
                 <input type="hidden" name="saveType" value="Add">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -140,7 +140,7 @@ if ($result->num_rows > 0) {
             </td>
             <td>
               <form method="post" action="">
-                <input type="hidden" name="cid" value="<?=$row["CarID"]?>" />
+                <input type="hidden" name="bid" value="<?=$row["Birdid"]?>" />
                 <input type="hidden" name="saveType" value="Delete">
                 <button type="submit" class="btn" onclick="return confirm('Are you sure?')"> Delete </button>
               </form>
