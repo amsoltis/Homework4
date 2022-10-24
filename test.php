@@ -21,9 +21,9 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   switch ($_POST['saveType']) {
     case 'Add':
-        $sqlAdd = "insert into Cars (Color, Make, Year) value (?, ?, ?)";
+        $sqlAdd = "insert into Birds (Name, Color, Age) value (?, ?, ?)";
         $stmtAdd = $conn->prepare($sqlAdd);
-        $stmtAdd->bind_param("ssi", $_POST['cColor'], $_POST['cMake'], $_POST['cYear']);
+        $stmtAdd->bind_param("ssi", $_POST['bName'], $_POST['bColor'], $_POST['bAge']);
         $stmtAdd->execute();   
       echo '<div class="alert alert-success" role="alert">New Car added.</div>';
       break;
@@ -62,13 +62,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="modal-body">
               <form method="post" action="">
                 <div class="mb-3">
-                  <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Color</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cColor">
-                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Make</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cMake">
-                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Year</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cYear">
-                          <div id="editCar<?=$row["CarID"]?>Help" class="form-text">Enter the Car information.</div>
+                  <label for="editBird<?=$row["Birdid"]?>Name" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="editBird<?=$row["Birdid"]?>Name" aria-describedby="editBird<?=$row["Birdid"]?>Help" name="bName">
+                          <label for="editBird<?=$row["Birdid"]?>Name" class="form-label">Color</label>
+                          <input type="text" class="form-control" id="editBird<?=$row["Birdid"]?>Name" aria-describedby="editBird<?=$row["Birdid"]?>Help" name="bColor">
+                          <label for="editBird<?=$row["Birdid"]?>Name" class="form-label">Age</label>
+                          <input type="text" class="form-control" id="editBird<?=$row["Birdid"]?>Name" aria-describedby="editBird<?=$row["Birdid"]?>Help" name="bAge">
+                          <div id="editBird<?=$row["Birdid"]?>Help" class="form-text">Enter the Car information.</div>
                         </div>
                 <input type="hidden" name="saveType" value="Add">
                 <button type="submit" class="btn btn-primary">Submit</button>
