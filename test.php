@@ -45,6 +45,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
       <h1>Instructors</h1>
 
+      <select class="form-select" aria-label="Select instructor" id="instructorList" name="iid">
+<?php
+    $instructorSql = "select * from instructor";
+    $instructorResult = $conn->query($instructorSql);
+    while($instructorRow = $instructorResult->fetch_assoc()) {
+      if ($instructorRow['InstructorID'] == $row['InstructorID']) {
+        $selText = " selected";
+      } else {
+        $selText = "";
+      }
+?>
+  <option value="<?=$instructorRow['InstructorID']?>"<?=$selText?>><?=$instructorRow['firstName']?></option>
+<?php
+    }
+?>
+</select>
+
       <table class="table table-striped">
           
           <!-- Button trigger modal -->
