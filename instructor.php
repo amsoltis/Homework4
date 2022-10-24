@@ -94,7 +94,7 @@ $result = $conn->query($sql);
 
 <select>
 <?php foreach( $results as $row ){
-    echo "<option>" . $row['LastName'] . "</option>";
+    echo "<option>" . $row[LastName] . "</option>";
    }
  ?> 
 </select>
