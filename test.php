@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <label for="cars">Choose a car:</label>
 
 <select name="cars" id="cars">
-  <option value="volvo"><?=$row["InstructorID"]?></option>
+  <option value="Value">Value</option>
 </select>
 
       <table class="table table-striped">
