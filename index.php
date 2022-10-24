@@ -14,12 +14,7 @@
         Modals (pop-up) are used to add, edit, and delete records.
     </br> 
     <br>
-        <select name="cars" id="cars">
-          <option value="volvo">Test</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
+        
     </br>
     <br>
         <?php require_once("footer.php"); ?>

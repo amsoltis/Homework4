@@ -144,6 +144,15 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 
+<select name="dropDown" >
+        <?php 
+        $select = $db->query("SELECT * FROM Instructor");
+        while($row=$select->fetch_assoc()):
+        ?>
+        <option value="<?php echo $row['InstructorID']; ?>><?php echo $row['FirstName']; ?></option>
+        <?php endwhile; ?>
+</select>
+
 $conn->close();
 ?>
           
