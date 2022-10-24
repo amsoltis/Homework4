@@ -144,13 +144,6 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 
-<select>
-<?php foreach( $results as $row ){
-    echo "<option>" . $row[LastName] . "</option>";
-   }
- ?> 
-</select>
-
 $conn->close();
 ?>
           
