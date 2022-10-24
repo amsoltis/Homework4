@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     case 'Add':
         $sqlAdd = "insert into Courses (InstructorID, CourseNumber, Section) value (?, ?, ?)";
         $stmtAdd = $conn->prepare($sqlAdd);
-        $stmtAdd->bind_param("iss", $_POST['cInsID'], $_POST['cCourse'], $_POST['cSection']);
+        $stmtAdd->bind_param("isi", $_POST['cInsID'], $_POST['cCourse'], $_POST['cSection']);
         $stmtAdd->execute();   
       echo '<div class="alert alert-success" role="alert">New Course added.</div>';
       break;
