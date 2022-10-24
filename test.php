@@ -40,6 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmtDelete->bind_param("i", $_POST['iid']);
         $stmtDelete->execute();
       echo '<div class="alert alert-success" role="alert">Instructor deleted.</div>';
+    case 'Add Course':
+        $sqlCourse = "insert into Courses (InstructorID, CourseNumber, Section) value (?, ?, ?)";
+        $stmtCourse = $conn->prepare($sql);
+        $stmtCourse->bind_param("isi",$_POST['iid'],$_POST['cCourse'], $_POST['cSection']);
+        $stmtCourse->execute();  
+      echo '<div class="alert alert-success" role="alert">Course Added.</div>';
   }
 }
 ?>
@@ -152,9 +158,9 @@ if ($result->num_rows > 0) {
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">First Name</label>
+                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Course</label>
                           <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iFirstName" value="<?=$row['FirstName']?>">
-                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Last Name</label>
+                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Section</label>
                           <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iLastName" value="<?=$row['LastName']?>">
                           <div id="editInstructor<?=$row["InstructorID"]?>Help" class="form-text">Enter the instructor's name.</div>
                         </div>

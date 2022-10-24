@@ -20,7 +20,6 @@ $Course = $_POST['Course'];
 $Section = $_POST['Section'];
 
 $sql = "insert into Courses (InstructorID, CourseNumber, Section) value (?, ?, ?)";
-//echo $sql;
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iss",$_POST['id'],$Course, $Section);
     $stmt->execute();        
