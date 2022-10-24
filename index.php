@@ -3,6 +3,7 @@
 </head>
 
 <body>
+<div class="container">
     <br>
         This webpage contains 4 tables from an sql database. (Instructors, Courses, Cars, Birds)
     </br>
@@ -10,9 +11,9 @@
         Each table allows you to add, edit, and delete records.
     </br>
     <br>
-        In the 'Instructors' table you can add courses taught by that professor to the courses table by using the 'Add Course' button.
+        Modals (pop-up) are used to add, edit, and delete records.
     </br>
-<br></br>
+</div>
 </body>
 
 <footer>
