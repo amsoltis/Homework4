@@ -13,9 +13,10 @@
     <br>
         Modals (pop-up) are used to add, edit, and delete records.
     </br>
+     <?php require_once("footer.php"); ?>
 </div>
 </body>
 
 <footer>
-    <?php require_once("footer.php"); ?>
+   
 </footer>
