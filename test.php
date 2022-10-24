@@ -45,10 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
       <h1>Instructors</h1>
 
-      <label for="cars"><?=$row["InstructorID"]?></label>
+      <label for="cars">Choose a car:</label>
 
 <select name="cars" id="cars">
-  <option value="Value">Value</option>
+  <option value="volvo"><?=$row["InstructorID"]?></option>
 </select>
 
       <table class="table table-striped">
