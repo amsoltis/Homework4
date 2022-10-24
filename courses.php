@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="mb-3">
                   <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">InstructorID</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cInsID">
-                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Course</label>
+                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">CourseNumber</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Section</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cSection">
