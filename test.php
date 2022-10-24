@@ -47,13 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <label for="cars">Choose a car:</label>
 
-<select name="cars" id="cars">
-  <option value="volvo">Test</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-
       <table class="table table-striped">
           
           <!-- Button trigger modal -->
