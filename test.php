@@ -122,7 +122,7 @@ if ($result->num_rows > 0) {
                       <form method="post" action="">  
                         <div class="mb-3">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Color</label>
-                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="CourseID" value="<?=$row['Name']?>">
+                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cInsID" value="<?=$row['Name']?>">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Make</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse" value="<?=$row['Color']?>">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Year</label>
