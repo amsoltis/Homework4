@@ -123,6 +123,7 @@ if ($result->num_rows > 0) {
                         <div class="mb-3">
                           <label for="instructorList" class="form-label">Instructor</label>
                           <select class="form-select" aria-label="Select Instructor" id="instructorList" name="iId">
+                          </select>
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">CourseNumber</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse" value="<?=$row['CourseNumber']?>">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Section</label>
