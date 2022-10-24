@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 <select>
 <?php foreach( $results as $row ){
-    echo "<option>".$row[FirstName] . "</option>";
+    echo "<option>".$row["FirstName"] . "</option>";
    }
  ?> 
 </select>
