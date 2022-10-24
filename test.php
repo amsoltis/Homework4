@@ -40,12 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmtDelete->bind_param("i", $_POST['iid']);
         $stmtDelete->execute();
       echo '<div class="alert alert-success" role="alert">Instructor deleted.</div>';
-    case 'Add Course':
-        $sqlCourse = "insert into Courses (InstructorID, CourseNumber, Section) value (?, ?, ?)";
-        $stmtCourse = $conn->prepare($sql);
-        $stmtCourse->bind_param("isi",$_POST['iid'],$_POST['cCourse'], $_POST['cSection']);
-        $stmtCourse->execute();  
-      echo '<div class="alert alert-success" role="alert">Course Added.</div>';
   }
 }
 ?>
@@ -122,10 +116,10 @@ if ($result->num_rows > 0) {
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">CourseNumber</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="cCourse">
-                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Section</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="cSection">
+                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">First Name</label>
+                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iFirstName" value="<?=$row['FirstName']?>">
+                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iLastName" value="<?=$row['LastName']?>">
                           <div id="editInstructor<?=$row["InstructorID"]?>Help" class="form-text">Enter the instructor's name.</div>
                         </div>
                         <input type="hidden" name="iid" value="<?=$row['InstructorID']?>">
@@ -145,33 +139,30 @@ if ($result->num_rows > 0) {
               </form>
             </td>
             <td>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editInstructor<?=$row["InstructorID"]?>">
-                Add Course
-              </button>
-              <div class="modal fade" id="editInstructor<?=$row["InstructorID"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editInstructor<?=$row["InstructorID"]?>Label" aria-hidden="true">
+              <div class="modal fade" id="addInstructor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addInstructorLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editInstructor<?=$row["InstructorID"]?>Label">Edit Instructor</h1>
+                      <h1 class="modal-title fs-5" id="addCourseLabel">Add Course</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form method="post" action="">
                         <div class="mb-3">
-                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Course</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iFirstName" value="<?=$row['FirstName']?>">
-                          <label for="editInstructor<?=$row["InstructorID"]?>Name" class="form-label">Section</label>
-                          <input type="text" class="form-control" id="editInstructor<?=$row["InstructorID"]?>Name" aria-describedby="editInstructor<?=$row["InstructorID"]?>Help" name="iLastName" value="<?=$row['LastName']?>">
-                          <div id="editInstructor<?=$row["InstructorID"]?>Help" class="form-text">Enter the instructor's name.</div>
-                        </div>
-                        <input type="hidden" name="iid" value="<?=$row['InstructorID']?>">
-                        <input type="hidden" name="saveType" value="Edit">
+                          <label for="addCourse<?=$row["InstructorID"]?>Name" class="form-label">Course</label>
+                                  <input type="text" class="form-control" id="addCourse<?=$row["InstructorID"]?>Name" aria-describedby="addCourse<?=$row["InstructorID"]?>Help" name="iFirstName">
+                                  <label for="addCourse<?=$row["InstructorID"]?>Name" class="form-label">Last Name</label>
+                                  <input type="text" class="form-control" id="addCourse<?=$row["InstructorID"]?>Name" aria-describedby="addCourse<?=$row["InstructorID"]?>Help" name="iLastName">
+                                  <div id="addCourse<?=$row["InstructorID"]?>Help" class="form-text">Enter the instructor's name.</div>
+                                </div>
+                        <input type="hidden" name="saveType" value="Add">
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
             </td>
           </tr>
           
