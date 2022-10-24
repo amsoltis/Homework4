@@ -122,7 +122,7 @@ if ($result->num_rows > 0) {
                       <form method="post" action="">  
                         <div class="mb-3">
                           <label for="instructorList" class="form-label">Instructor</label>
-                          <select class="form-select" aria-label="Select Instructor" id="instructorList" name="iId">
+                          <select class="form-select" aria-label="Select Instructor" id="instructorList" name="cInsID">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
