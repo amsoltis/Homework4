@@ -28,9 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo '<div class="alert alert-success" role="alert">New Car added.</div>';
       break;
     case 'Edit':
-      $sqlEdit = "update Cars set Color=?, Make=?, Year=? where CarID=?";
+      $sqlEdit = "update Birds set Name=?, Color=?, Age=? where Birdid=?";
       $stmtEdit = $conn->prepare($sqlEdit);
-      $stmtEdit->bind_param("ssii", $_POST['cColor'], $_POST['cMake'], $_POST['cYear'], $_POST['cid']);
+      $stmtEdit->bind_param("ssii", $_POST['bName'], $_POST['bColor'], $_POST['bAge'], $_POST['bid']);
       $stmtEdit->execute();
       echo '<div class="alert alert-success" role="alert">Car edited.</div>';
       break;
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-      <h1>Cars</h1>
+      <h1>Birds</h1>
       <table class="table table-striped">
           
           <!-- Button trigger modal -->
@@ -83,10 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Bird ID</th>
+            <th>Name</th>
             <th>Color</th>
-            <th>Make</th>
-            <th>Year</th>
+            <th>Age</th>
             <th></th>
             <th></th>
           </tr>
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <tbody>
           
 <?php
-$sql = "SELECT * FROM Cars";
+$sql = "SELECT * FROM Birds";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -103,33 +103,33 @@ if ($result->num_rows > 0) {
 ?>
           
           <tr>
-            <td><?=$row["CarID"]?></td>
+            <td><?=$row["Birdid"]?></td>
+            <td><?=$row["Name"]?></td>
             <td><?=$row["Color"]?></td>
-            <td><?=$row["Make"]?></td>
-            <td><?=$row["Year"]?></td>
+            <td><?=$row["Age"]?></td>
             <td>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCar<?=$row["CarID"]?>">
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editBird<?=$row["Birdid"]?>">
                 Edit
               </button>
-              <div class="modal fade" id="editCar<?=$row["CarID"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editCar<?=$row["CarID"]?>Label" aria-hidden="true">
+              <div class="modal fade" id="editBird<?=$row["Birdid"]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editBird<?=$row["Birdid"]?>Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="editCar<?=$row["CarID"]?>Label">Edit Car</h1>
+                      <h1 class="modal-title fs-5" id="editBird<?=$row["Birdid"]?>Label">Edit Bird</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form method="post" action="">
+                      <form method="post" action="">  
                         <div class="mb-3">
-                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Color</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cColor" value="<?=$row['Color']?>">
-                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Make</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cMake" value="<?=$row['Make']?>">
-                          <label for="editCar<?=$row["CarID"]?>Name" class="form-label">Year</label>
-                          <input type="text" class="form-control" id="editCar<?=$row["CarID"]?>Name" aria-describedby="editCar<?=$row["CarID"]?>Help" name="cYear" value="<?=$row['Year']?>">
-                          <div id="editCar<?=$row["CarID"]?>Help" class="form-text">Enter the Car Information.</div>
+                          <label for="editBird<?=$row["Birdid"]?>Name" class="form-label">Color</label>
+                          <input type="text" class="form-control" id="editBird<?=$row["Birdid"]?>Name" aria-describedby="editBird<?=$row["Birdid"]?>Help" name="bName" value="<?=$row['Name']?>">
+                          <label for="editBird<?=$row["Birdid"]?>Name" class="form-label">Make</label>
+                          <input type="text" class="form-control" id="editBird<?=$row["Birdid"]?>Name" aria-describedby="editBird<?=$row["Birdid"]?>Help" name="bColor" value="<?=$row['Color']?>">
+                          <label for="editBird<?=$row["Birdid"]?>Name" class="form-label">Year</label>
+                          <input type="text" class="form-control" id="editBird<?=$row["Birdid"]?>Name" aria-describedby="editBird<?=$row["Birdid"]?>Help" name="bAge" value="<?=$row['Age']?>">
+                          <div id="editBird<?=$row["Birdid"]?>Help" class="form-text">Enter the Bird Information.</div>
                         </div>
-                        <input type="hidden" name="cid" value="<?=$row['CarID']?>">
+                        <input type="hidden" name="bid" value="<?=$row['Birdid']?>">
                         <input type="hidden" name="saveType" value="Edit">
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
