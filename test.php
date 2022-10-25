@@ -94,8 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <thead>
           <tr>
             <th>Course ID</th>
-            <th>Course - Section</th>
-            <th>InstructorID</th>
+            <th>Course Number</th>
+            <th>Section</th>
             <th>Instructor</th>
             <th></th>
             <th></th>
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <tbody>
           
 <?php
-$sql = "SELECT CourseID, CourseNumber, Section, C.InstructorID, FirstName, LastName From Instructor I join Courses C on I.InstructorID=C.InstructorID Group by C.InstructorID, CourseNumber, CourseID Order by C.InstructorID, CourseID, Section";
+$sql = "SELECT CourseID, CourseNumber, Section, FirstName, LastName From Instructor I join Courses C on I.InstructorID=C.InstructorID Group by C.InstructorID, CourseNumber, CourseID Order by C.InstructorID, CourseID, Section";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -114,8 +114,8 @@ if ($result->num_rows > 0) {
           
           <tr>
             <td><?=$row["CourseID"]?></td>
-            <td><?=$row["CourseNumber"]." | "?><?=$row["Section"]?></a></td>
-            <td><?=$row["InstructorID"]?></td>
+            <td><?=$row["CourseNumber"]?></td>
+            <td><?=$row["Section"]?></td>
             <td><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
             <td>
               <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCourse<?=$row["CourseID"]?>">
