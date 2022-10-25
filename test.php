@@ -114,7 +114,7 @@ if ($result->num_rows > 0) {
           
           <tr>
             <td><?=$row["CourseID"]?></td>
-            <td><?=$row["CourseNumber"]." "?><?=$row["Section"]?></a></td>
+            <td><?=$row["CourseNumber"]." - "?><?=$row["Section"]?></a></td>
             <td><?=$row["InstructorID"]?></td>
             <td><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
             <td>
