@@ -126,7 +126,7 @@ if ($result->num_rows > 0) {
                           <label for="instructorList" class="form-label">Instructor</label>
                           <select class="form-select" aria-label="Select Instructor" id="instructorList" name="cInsID">
                           <?php
-                            $supervisorSql = "select * from Instructor";
+                            $supervisorSql = "SELECT CourseID, CourseNumber, Section, C.InstructorID, FirstName, LastName From Instructor I left join Courses C on I.InstructorID=C.InstructorID";
                             $supervisorResult = $conn->query($supervisorSql);
                             while($supervisorRow = $supervisorResult->fetch_assoc()) {
                             if ($supervisorRow['C.InstructorID'] == $row['I.InstructorID']) {
