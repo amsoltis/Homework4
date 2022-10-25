@@ -14,7 +14,7 @@
         Modals (pop-up) are used to add, edit, and delete records.
     </br> 
     <br>
-        
+        Drop down used to select instructor when adding/editing records in the courses table.
     </br>
     <br>
         <?php require_once("footer.php"); ?>
