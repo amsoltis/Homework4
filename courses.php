@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             }
                             ?>
                           </select>
-                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">CourseNumber</label>
+                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Course Number</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Section</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cSection">
@@ -145,7 +145,7 @@ if ($result->num_rows > 0) {
                             }
                             ?>
                           </select>
-                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">CourseNumber</label>
+                          <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Course Number</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse" value="<?=$row['CourseNumber']?>">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Section</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cSection" value="<?=$row['Section']?>">
