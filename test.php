@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <label for="instructorList" class="form-label">Instructor</label>
                           <select class="form-select" aria-label="Select Instructor" id="instructorList" name="cInsID">
                           <?php
-                            $instructorSQL = "select * from Instructor";
+                            $instructorSQL = "select * from Instructor Order by InstructorID";
                             $instructorResult = $conn->query($instructorSQL);
                             while($instructorRow = $instructorResult->fetch_assoc()) {
                             ?>
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <tbody>
           
 <?php
-$sql = "SELECT CourseID, CourseNumber, Section, C.InstructorID, FirstName, LastName From Instructor I inner join Courses C on I.InstructorID=C.InstructorID";
+$sql = "SELECT CourseID, CourseNumber, Section, C.InstructorID, FirstName, LastName From Instructor I inner join Courses C on I.InstructorID=C.InstructorID Order by InstructorID";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -136,7 +136,7 @@ if ($result->num_rows > 0) {
                           <label for="instructorList" class="form-label">Instructor</label>
                           <select class="form-select" aria-label="Select Instructor" id="instructorList" name="cInsID">
                           <?php
-                            $instructorSQL = "select * from Instructor";
+                            $instructorSQL = "select * from Instructor Order by InstructorID";
                             $instructorResult = $conn->query($instructorSQL);
                             while($instructorRow = $instructorResult->fetch_assoc()) {
                             ?>
