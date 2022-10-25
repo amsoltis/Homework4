@@ -93,11 +93,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           
         <thead>
           <tr>
-            <th>CourseID</th>
+            <th>Course ID</th>
+            <th>Course - Section</th>
             <th>InstructorID</th>
             <th>Instructor</th>
-            <th>Course</th>
-            <th>Section</th>
             <th></th>
             <th></th>
           </tr>
@@ -115,10 +114,9 @@ if ($result->num_rows > 0) {
           
           <tr>
             <td><?=$row["CourseID"]?></td>
+            <td><?=$row["CourseNumber"]." "?><?=$row["Section"]?></a></td>
             <td><?=$row["InstructorID"]?></td>
             <td><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
-            <td><?=$row["CourseNumber"]?></td>
-            <td><?=$row["Section"]?></td>
             <td>
               <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editCourse<?=$row["CourseID"]?>">
                 Edit
