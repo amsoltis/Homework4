@@ -140,7 +140,7 @@ if ($result->num_rows > 0) {
                             $instructorResult = $conn->query($instructorSQL);
                             while($instructorRow = $instructorResult->fetch_assoc()) {
                             ?>
-                            <option value="<?=$instructorRow["InstructorID"]?>"><?=$instructorRow["LastName"]." "?><?=$instructorRow["FirstName"]?></option>
+                            <option value="<?=$instructorRow["InstructorID"]?>"><?=$instructorRow["InstructorID"]." - "?><?=$instructorRow["LastName"]. " "?><?=$instructorRow["Firstname"]?></option>
                             <?php
                             }
                             ?>
