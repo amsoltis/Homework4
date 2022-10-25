@@ -85,6 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <tr>
             <th>CourseID</th>
             <th>InstructorID</th>
+            <th>Instructor</th>
             <th>Course</th>
             <th>Section</th>
             <th></th>
@@ -94,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <tbody>
           
 <?php
-$sql = "SELECT CourseID, InstructorID, CourseNumber, Section from Courses Order by CourseID";
+$sql = "SELECT CourseID, CourseNumber, Section, C.InstructorID, FirstName, LastName From Instructor I left join Courses C on I.InstructorID=C.InstructorID";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

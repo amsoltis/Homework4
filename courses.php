@@ -105,6 +105,7 @@ if ($result->num_rows > 0) {
           <tr>
             <td><?=$row["CourseID"]?></td>
             <td><?=$row["InstructorID"]?></td>
+            <td><?=$row["LastName"]." "?><?=$row["FirstName"]?></a></td>
             <td><?=$row["CourseNumber"]?></td>
             <td><?=$row["Section"]?></td>
             <td>
