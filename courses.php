@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $instructorResult = $conn->query($instructorSQL);
                             while($instructorRow = $instructorResult->fetch_assoc()) {
                             ?>
-                            <option value="<?=$instructorRow["InstructorID"]?>"><?=$instructorRow["LastName"]." "?><?=$instructorRow["FirstName"]?></option>
+                            <option value="<?=$instructorRow["InstructorID"]?>"><?=$instructorRow["InstructorID"]." - "?><?=$instructorRow["LastName"]. " "?><?=$instructorRow["FirstName"]?></option>
                             <?php
                             }
                             ?>
@@ -140,7 +140,7 @@ if ($result->num_rows > 0) {
                             $instructorResult = $conn->query($instructorSQL);
                             while($instructorRow = $instructorResult->fetch_assoc()) {
                             ?>
-                            <option value="<?=$instructorRow["InstructorID"]?>"><?=$instructorRow["InstructorID"]." - "?><?=$instructorRow["LastName"]. " "?><?=$instructorRow["Firstname"]?></option>
+                            <option value="<?=$instructorRow["InstructorID"]?>"><?=$instructorRow["InstructorID"]." - "?><?=$instructorRow["LastName"]. " "?><?=$instructorRow["FirstName"]?></option>
                             <?php
                             }
                             ?>
