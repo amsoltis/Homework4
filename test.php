@@ -128,7 +128,7 @@ if ($result->num_rows > 0) {
                           <?php
                             $instructorSQL = "select * from Instructor";
                             $instructorResult = $conn->query($instructorSQL);
-                            while($InstructorRow = $instructorResult->fetch_assoc())) {
+                            while($InstructorRow = $instructorResult->fetch_assoc()) {
                             ?>
                             <option value="<?=$instructorRow['InstructorID']?>"<?=$selText?>><?=$row["LastName"]." "?><?=$row["FirstName"]?></option>
                             <?php
