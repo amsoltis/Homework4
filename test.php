@@ -129,7 +129,7 @@ if ($result->num_rows > 0) {
                             $supervisorSql = "select * from Instructor";
                             $supervisorResult = $conn->query($supervisorSql);
                             while($supervisorRow = $supervisorResult->fetch_assoc()) {
-                            if ($supervisorRow['InstructorID'] == $row['InstructorID']) {
+                            if ($supervisorRow['InstructorID'] == $row['C.InstructorID']) {
                             $selText = " selected";
                             } else {
                             $selText = "";
