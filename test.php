@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <tbody>
           
 <?php
-$sql = "SELECT CourseID, CourseNumber, Section, C.InstructorID, FirstName, LastName From Instructor I inner join Courses C on I.InstructorID=C.InstructorID Order by C.InstructorID";
+$sql = "SELECT CourseID, CourseNumber, Section, C.InstructorID, FirstName, LastName From Instructor I join Courses C on I.InstructorID=C.InstructorID Group by C.InstructorID, CourseNumber, CourseID Order by C.InstructorID, CourseID, Section";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
