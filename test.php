@@ -62,8 +62,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="modal-body">
               <form method="post" action="">
                 <div class="mb-3">
-                  <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">InstructorID</label>
-                          <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cInsID">
+                  <label for="instructorList" class="form-label">Instructor</label>
+                          <select class="form-select" aria-label="Select Instructor" id="instructorList" name="cInsID">
+                          <?php
+                            $instructorSQL = "select * from Instructor";
+                            $instructorResult = $conn->query($instructorSQL);
+                            while($instructorRow = $instructorResult->fetch_assoc()) {
+                            ?>
+                            <option value="<?=$instructorRow["InstructorID"]?>"><?=$instructorRow["LastName"]." "?><?=$instructorRow["FirstName"]?></option>
+                            <?php
+                            }
+                            ?>
+                          </select>
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">CourseNumber</label>
                           <input type="text" class="form-control" id="editCourse<?=$row["CourseID"]?>Name" aria-describedby="editCourse<?=$row["CourseID"]?>Help" name="cCourse">
                           <label for="editCourse<?=$row["CourseID"]?>Name" class="form-label">Section</label>
