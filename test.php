@@ -129,7 +129,7 @@ if ($result->num_rows > 0) {
                             $instructorSQL = "select * from Instructor";
                             $instructorResult = $conn->query($instructorSQL);
                             while($instructorRow = $instructorResult->fetch_assoc()) {
-                            if ($instructorRow['C.InstructorID'] == $row['InstructorID']) {
+                            if ($instructorRow['InstructorID'] == $row['C.nstructorID']) {
                             $selText = " selected";
                             } else {
                             $selText = "";
